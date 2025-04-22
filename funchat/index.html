@@ -1,0 +1,93 @@
+
+
+
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriendlyChat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .chat-room {
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .messages {
+            border: 1px solid #ddd;
+            height: 200px;
+            overflow-y: scroll;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to FriendlyChat!</h1>
+
+    <div id="kidsRoom" class="chat-room">
+        <h2>Kids Room 🧒</h2>
+        <div class="messages" id="kidsMessages"></div>
+        <input type="text" id="kidsInput" class="input-box" placeholder="Type a message...">
+        <button class="button" onclick="sendMessage('kids')">Send</button>
+    </div>
+
+    <div id="teensRoom" class="chat-room">
+        <h2>Teens Room 😎</h2>
+        <div class="messages" id="teensMessages"></div>
+        <input type="text" id="teensInput" class="input-box" placeholder="Type a message...">
+        <button class="button" onclick="sendMessage('teens')">Send</button>
+    </div>
+
+    <div id="adultsRoom" class="chat-room">
+        <h2>Adults Room 👩‍💼</h2>
+        <div class="messages" id="adultsMessages"></div>
+        <input type="text" id="adultsInput" class="input-box" placeholder="Type a message...">
+        <button class="button" onclick="sendMessage('adults')">Send</button>
+    </div>
+
+    <script>
+        function sendMessage(room) {
+            var message = document.getElementById(room + "Input").value;
+            if (message !== "") {
+                var messageDiv = document.createElement("div");
+                messageDiv.textContent = message;
+                document.getElementById(room + "Messages").appendChild(messageDiv);
+                document.getElementById(room + "Input").value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>

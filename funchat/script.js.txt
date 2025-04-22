@@ -1,0 +1,11 @@
+document.getElementById('kidsRoom').addEventListener('click', function() {
+    alert('Welcome to the Kids Room!');
+});
+
+document.getElementById('teensRoom').addEventListener('click', function() {
+    alert('Welcome to the Teens Room!');
+});
+
+document.getElementById('adultsRoom').addEventListener('click', function() {
+    alert('Welcome to the Adults Room!');
+});
